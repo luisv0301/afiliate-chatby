@@ -86,18 +86,17 @@ const updateRefCode = () => {
     return;
   }
 
-  /*
-   const data = {
+  const data = {
     workspace: {
       workspace_id,
       workspace_name,
       owner_name,
       owner_email,
-    },,
+    },
     affiliateRef: textFieldValue,
   };
-*/
 
+  /*
   const data = {
     workspace: {
       workspace_id: "34950",
@@ -107,6 +106,7 @@ const updateRefCode = () => {
     },
     affiliateRef: textFieldValue,
   };
+  */
 
   fetch(refVerificationEndpoint, {
     method: "POST",
@@ -236,8 +236,7 @@ const paintInitialData = (data) => {
 const getInitialData = () => {
   const endpoint = "https://hook.us1.make.com/ewmnitqoahhktm2m925hacl5hjnlnwfk";
 
-  /*
- const data = {
+  const data = {
     workspace: {
       workspace_id,
       workspace_name,
@@ -246,8 +245,7 @@ const getInitialData = () => {
     },
   };
 
-*/
-
+  /*
   const data = {
     workspace: {
       workspace_id: "34950",
@@ -256,7 +254,7 @@ const getInitialData = () => {
       owner_email: "alberto.baron2005@gmail.com",
     },
   };
-
+*/
   fetch(endpoint, {
     method: "POST",
     headers: {
