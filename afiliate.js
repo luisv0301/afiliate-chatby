@@ -21,7 +21,18 @@ const workspace_name = urlParams.get("workspace_name");
 const owner_name = urlParams.get("owner_name");
 const owner_email = urlParams.get("owner_email");
 
-rewardsBtn.addEventListener("click", () => {
+const dataURL = {
+  workspace_id,
+  workspace_name,
+  owner_name,
+  owner_email,
+};
+
+console.log("data que llega desde la URL:", dataURL);
+
+//snazzy-khapse-28b8e0.netlify.app/afiliates?workspace_id="155"&workspace_name="Name"&owner_email="correo@gmail.com"&owner_name="Pepe Jose"
+
+https: rewardsBtn.addEventListener("click", () => {
   console.log("click en tab");
   withdraws.style.display = "none";
   rewards.style.display = "table";
