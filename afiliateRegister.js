@@ -2971,6 +2971,15 @@ const workspace_name = urlParams.get("workspace_name");
 const owner_name = urlParams.get("owner_name");
 const owner_email = urlParams.get("owner_email");
 
+const dataURL = {
+  workspace_id,
+  workspace_name,
+  owner_name,
+  owner_email,
+};
+
+console.log("data que llega desde la URL ha registro de afiliado:", dataURL);
+
 let intervalo = "";
 let prevPhoneNumber = "";
 let tiempo = 60;
@@ -3140,7 +3149,7 @@ const sendVerificationCode = (codeValue) => {
     "https://app.chatby.io/api/iwh/b376e2f88ce7871db285082c5ecad423";
 
   const parsedPhone = countryCodeGlobal + codeValue;
-
+  /*
   const data = {
     phone: parsedPhone,
     email: "alberto.baron2005@gmail.com",
@@ -3156,7 +3165,8 @@ const sendVerificationCode = (codeValue) => {
     wa_code: verfCode,
   };
 
-  /*
+ */
+
   const data = {
     phone: parsedPhone,
     email: owner_email,
@@ -3171,7 +3181,7 @@ const sendVerificationCode = (codeValue) => {
     },
     wa_code: verfCode,
   };
-*/
+
   console.log("enviando data...", data);
 
   fetch(endpoint, {
@@ -3218,12 +3228,13 @@ const verificateCode = () => {
   errMessage.textContent = "Verificacion existosa";
   errMessage.style.color = "green";
 
-  const url = new URL("https://chatby.io/affiliate");
+  // const url = new URL("https://chatby.io/affiliate");
+
+  const url = new URL("https://snazzy-khapse-28b8e0.netlify.app/afiliates");
   url.searchParams.set("workspace_id", workspace_id);
   url.searchParams.set("workspace_name", workspace_name);
   url.searchParams.set("owner_name", owner_name);
   url.searchParams.set("owner_email", owner_email);
 
-  const urlOnSuccess = "https://www.youtube.com/?app";
-  window.location.assign(urlOnSuccess);
+  window.location.assign(url);
 };

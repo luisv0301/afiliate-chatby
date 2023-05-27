@@ -30,7 +30,7 @@ const dataURL = {
 
 console.log("data que llega desde la URL:", dataURL);
 
-//snazzy-khapse-28b8e0.netlify.app/afiliates?workspace_id="155"&workspace_name="Name"&owner_email="correo@gmail.com"&owner_name="Pepe Jose"
+//https://snazzy-khapse-28b8e0.netlify.app/afiliates?workspace_id=2023&workspace_name=Restaurant&owner_email=correo@gmail.com&owner_name=Pepe%20Ignacio
 
 https: rewardsBtn.addEventListener("click", () => {
   console.log("click en tab");
@@ -187,7 +187,6 @@ const paintRewardsRow = (data) => {
 
   const row = document.createElement("tr");
   row.innerHTML = template;
-  console.log("row:", row);
   rewards.appendChild(row);
   //rewards.insertAdjacentHTML("beforeend", row);
 };
@@ -279,8 +278,23 @@ const getInitialData = () => {
         const overlayContent = document.getElementById("overlay__content");
         overlayContent.classList.add("fade-down");
         overlay.classList.add("fade-out");
+
+        //borrar de aqui
+        const pruebaURL =
+          "https://snazzy-khapse-28b8e0.netlify.app/afiliate-register";
+        const URLoficial = "https://chatby.io/affiliate-sign-up";
+        const url = new URL(pruebaURL);
+        url.searchParams.set("workspace_id", workspace_id);
+        url.searchParams.set("workspace_name", workspace_name);
+        url.searchParams.set("owner_name", owner_name);
+        url.searchParams.set("owner_email", owner_email);
+
+        window.location.assign(url);
       } else {
-        const url = new URL("https://chatby.io/affiliate-sign-up");
+        const pruebaURL =
+          "https://snazzy-khapse-28b8e0.netlify.app/afiliate-register";
+        const URLoficial = "https://chatby.io/affiliate-sign-up";
+        const url = new URL(pruebaURL);
         url.searchParams.set("workspace_id", workspace_id);
         url.searchParams.set("workspace_name", workspace_name);
         url.searchParams.set("owner_name", owner_name);
