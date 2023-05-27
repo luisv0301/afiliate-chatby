@@ -2979,6 +2979,7 @@ const dataURL = {
 };
 
 console.log("data que llega desde la URL ha registro de afiliado:", dataURL);
+console.log("nueva version");
 
 let intervalo = "";
 let prevPhoneNumber = "";

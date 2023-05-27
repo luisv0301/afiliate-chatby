@@ -284,7 +284,8 @@ const getInitialData = () => {
           "https://snazzy-khapse-28b8e0.netlify.app/afiliate-register";
         const URLoficial = "https://chatby.io/affiliate-sign-up";
 
-        let urlTest = new URL(pruebaURL);
+        /*   
+         let urlTest = new URL(pruebaURL);
         let params = new URLSearchParams(urlTest.search);
 
         //Add a second foo parameter.
@@ -292,14 +293,15 @@ const getInitialData = () => {
         params.append("workspace_name", workspace_name);
         params.append("owner_name", owner_name);
         params.append("owner_email", owner_email);
+        */
 
-        /* const url = new URL(pruebaURL);
+        const url = new URL(pruebaURL);
         url.searchParams.set("workspace_id", workspace_id);
         url.searchParams.set("workspace_name", workspace_name);
         url.searchParams.set("owner_name", owner_name);
         url.searchParams.set("owner_email", owner_email);
-*/
-        window.location.assign(urlTest);
+
+        window.location.assign(url);
       } else {
         const pruebaURL =
           "https://snazzy-khapse-28b8e0.netlify.app/afiliate-register";
